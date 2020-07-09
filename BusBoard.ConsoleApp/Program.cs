@@ -15,8 +15,6 @@ namespace BusBoard.ConsoleApp
     static void Main(string[] args)
     {
       ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-      
-      
       var clientResponse = getClientJSONResponse();
     }
 
