@@ -9,19 +9,20 @@ namespace BusBoard.ConsoleApp.Properties
         public string LineID { get; set; }
         public string StationName { get; set; }
         public string DestinationName { get; set; }
-        public int TimeToStation { get; set; }
+        public decimal TimeToStationInMin { get; set; }
         public DateTime ExpectedArrivalTime { get; set; }
 
         [JsonConstructor]
         public BusData(string vehicleId, string lineId,string stationName, string destinationName, string timeToStation,
-            string expectedArrivalTime)
+            string expectedArrival)
         {
             VehicleID = vehicleId;
             LineID = lineId;
             StationName = stationName;
             DestinationName = destinationName;
-            TimeToStation = int.Parse(timeToStation);
-            ExpectedArrivalTime = Convert.ToDateTime(expectedArrivalTime);
+            TimeToStationInMin = (int.Parse(timeToStation))/60;
+            ExpectedArrivalTime = Convert.ToDateTime(expectedArrival);
+
         }
     }
 }
