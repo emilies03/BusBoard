@@ -5,18 +5,20 @@ namespace BusBoard.ConsoleApp.Properties
 {
     public class BusData
     {
-        private string VehicleID { get; set; }
-        private string LineID { get; set; }
-        private string DestinationName { get; set; }
-        private int TimeToStation { get; set; }
-        private DateTime ExpectedArrivalTime { get; set; }
+        public string VehicleID { get; set; }
+        public string LineID { get; set; }
+        public string StationName { get; set; }
+        public string DestinationName { get; set; }
+        public int TimeToStation { get; set; }
+        public DateTime ExpectedArrivalTime { get; set; }
 
         [JsonConstructor]
-        public BusData(string vehicleId, string lineId, string destinationName, string timeToStation,
+        public BusData(string vehicleId, string lineId,string stationName, string destinationName, string timeToStation,
             string expectedArrivalTime)
         {
             VehicleID = vehicleId;
             LineID = lineId;
+            StationName = stationName;
             DestinationName = destinationName;
             TimeToStation = int.Parse(timeToStation);
             ExpectedArrivalTime = Convert.ToDateTime(expectedArrivalTime);
