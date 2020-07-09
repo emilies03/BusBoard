@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusData.cs" />
+    <Compile Include="BusStop.cs" />
+    <Compile Include="BusStopResponse.cs" />
     <Compile Include="PostcodeObject.cs" />
     <Compile Include="PostcodeAPI.cs" />
     <Compile Include="PostcodeResponse.cs" />
