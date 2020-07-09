@@ -14,8 +14,7 @@ namespace BusBoard.ConsoleApp
     {
       ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
       
-      PostcodeAPI postcodeApi = new PostcodeAPI();
-      PostcodeObject postcode = postcodeApi.GetPostcodeLongitueAndLatitude("TN206TW");
+      
       UserConsoleInteration();
     }
 
@@ -25,23 +24,37 @@ namespace BusBoard.ConsoleApp
       while (userInput != "Exit")
       {
         Console.WriteLine("\nPlease enter an instruction: \n" +
-                          "1.The bus stop code you wish to query (490008660N)\n" +
+                          "1.The post code to find the nearest bus station (e.g NW51TL)\n" +
                           "2 Exit \n");
 
         userInput = Console.ReadLine();
         if (userInput != "Exit")
         {
           TflAPI TFLServerAPI = new TflAPI();
-          IEnumerable<BusData> listArrivingBuses = TFLServerAPI.GetArrivingBusesListFromServer(userInput);
-          if (listArrivingBuses.First().DestinationName != null)
+          PostcodeAPI postcodeApi = new PostcodeAPI();
+          PostcodeObject postcode = postcodeApi.GetPostcodeLongitueAndLatitude(userInput);
+          
+          if (postcode != null)
           {
-            PrintBusesToConsole(listArrivingBuses);
+            var TwoClosestBusStops = TFLServerAPI.GetBusStopsFromCoordinates(postcode.Longitude, postcode.Latitude);
+            try
+            {
+              IEnumerable<BusData> listArrivingBusesAtStop1 =
+                TFLServerAPI.GetArrivingBusesListFromServer(TwoClosestBusStops.First().NaptanId);
+              IEnumerable<BusData> listArrivingBusesAtStop2 =
+                TFLServerAPI.GetArrivingBusesListFromServer(TwoClosestBusStops.ElementAt(1).NaptanId);
+              PrintBusesToConsole(listArrivingBusesAtStop1);
+              PrintBusesToConsole(listArrivingBusesAtStop2);
+            }
+            catch (InvalidOperationException exception)
+            {
+              Console.WriteLine($"There are no bus stops registered near {userInput} \n");
+            }
           }
           else
           {
-            Console.WriteLine($"Invalid bus stop code: {userInput}");
+            Console.WriteLine($"Invalid postcode: {userInput}");
           }
-         
         }
       }
     }
