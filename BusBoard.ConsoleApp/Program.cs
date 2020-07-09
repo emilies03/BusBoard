@@ -13,7 +13,9 @@ namespace BusBoard.ConsoleApp
     static void Main(string[] args)
     {
       ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
+      
+      PostcodeAPI postcodeApi = new PostcodeAPI();
+      PostcodeObject postcode = postcodeApi.GetPostcodeLongitueAndLatitude("TN206TW");
       UserConsoleInteration();
     }
 
@@ -46,10 +48,10 @@ namespace BusBoard.ConsoleApp
 
     private static void PrintBusesToConsole(IEnumerable<BusData> listArrivingBuses)
     {
-      Console.WriteLine($"\n The next 5 buses arriving at {listArrivingBuses.First().StationName} are: \n");
+      Console.WriteLine($"\nThe next 5 buses arriving at {listArrivingBuses.First().StationName} are: \n");
       foreach (var bus in listArrivingBuses)
       {
-        Console.WriteLine($"Bus {bus.VehicleID} on line {bus.LineID} to {bus.DestinationName} will be arriving in {bus.TimeToStation} minutes. Expected: {bus.ExpectedArrival}");
+        Console.WriteLine($"Bus {bus.VehicleID} on line {bus.LineID} to {bus.DestinationName} will be arriving in {bus.TimeToStation/60} minutes. Expected: {bus.ExpectedArrival}");
       }
     }
 
