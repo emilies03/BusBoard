@@ -1,4 +1,5 @@
 ﻿using System;
+using BusBoard.Api.Exceptions;
 using RestSharp;
 
 namespace BusBoard.ConsoleApp
@@ -12,6 +13,11 @@ namespace BusBoard.ConsoleApp
             var request = new RestRequest($"{postcodeSting}");
             
             PostcodeResponse postcodeResponse = client.Execute<PostcodeResponse>(request).Data;
+            if (postcodeResponse.result == null)
+            {
+                throw new InvalidPostcodeException();
+            }
+            
             return postcodeResponse.result;
         }
 

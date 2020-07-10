@@ -1288,7 +1288,7 @@ $.format = $.validator.format;
 				return $.event.handle.call(this, e);
 			}
 		});
-	};
+	}
 	$.extend($.fn, {
 		validateDelegate: function(delegate, type, handler) {
 			return this.bind(type, function(event) {

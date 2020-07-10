@@ -1,104 +1,104 @@
 ﻿@model BusBoard.Web.ViewModels.BusInfo
 @{
-  ViewBag.Title = "Bus Information";
+    ViewBag.Title = "Bus Information";
 }
 
 <h2>BusInfo</h2>
 
 <div class="row">
     <p>The closest bus stops to @Model.PostCode are @Model.listArrivingBusesAtStop1.First().StationName and @Model.listArrivingBusesAtStop2.First().StationName </p>
-    
+
     <p> The next 5 buses arriving at @Model.listArrivingBusesAtStop1.First().StationName are: </p>
-  <table style="width:100%">
-    <tr>
-      <th>Line</th>
-      <th>Arriving in</th>
-      <th>BusID</th>
-      <th>Destination</th>
-      <th>Expected at</th>
-    </tr>
-    <tr>
-      <td>@Model.listArrivingBusesAtStop1.First().LineID</td>
-      <td>@Model.listArrivingBusesAtStop1.First().getTimeInMins() mins</td>
-      <td>@Model.listArrivingBusesAtStop1.First().VehicleID</td>
-      <td>@Model.listArrivingBusesAtStop1.First().DestinationName</td>
-      <td>@Model.listArrivingBusesAtStop1.First().ExpectedArrival</td>
-    </tr>
-    <tr>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(1).LineID</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(1).getTimeInMins() mins</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(1).VehicleID</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(1).DestinationName</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(1).ExpectedArrival</td>
-    </tr>
-    <tr>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(2).LineID</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(2).getTimeInMins() mins</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(2).VehicleID</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(2).DestinationName</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(2).ExpectedArrival</td>
-    </tr>
-    <tr>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(3).LineID</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(3).getTimeInMins() mins</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(3).VehicleID</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(3).DestinationName</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(3).ExpectedArrival</td>
-    </tr>
-    <tr>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(4).LineID</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(4).getTimeInMins() mins</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(4).VehicleID</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(4).DestinationName</td>
-      <td>@Model.listArrivingBusesAtStop1.ElementAt(4).ExpectedArrival</td>
-    </tr>
-  </table>
-  <p></p>
-  <p> The next 5 buses arriving at @Model.listArrivingBusesAtStop2.First().StationName are: </p>
-      <table style="width:100%">
+    <table style="width:100%">
         <tr>
-          <th>Line</th>
-          <th>Arriving in</th>
-          <th>BusID</th>
-          <th>Destination</th>
-          <th>Expected at</th>
+            <th>Line</th>
+            <th>Arriving in</th>
+            <th>BusID</th>
+            <th>Destination</th>
+            <th>Expected at</th>
         </tr>
         <tr>
-          <td>@Model.listArrivingBusesAtStop2.First().LineID</td>
-          <td>@Model.listArrivingBusesAtStop2.First().getTimeInMins() mins</td>
-          <td>@Model.listArrivingBusesAtStop2.First().VehicleID</td>
-          <td>@Model.listArrivingBusesAtStop2.First().DestinationName</td>
-          <td>@Model.listArrivingBusesAtStop2.First().ExpectedArrival</td>
+            <td>@Model.listArrivingBusesAtStop1.First().LineID</td>
+            <td>@Model.listArrivingBusesAtStop1.First().getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop1.First().VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop1.First().DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop1.First().ExpectedArrival</td>
         </tr>
         <tr>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(1).LineID</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(1).getTimeInMins() mins</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(1).VehicleID</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(1).DestinationName</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(1).ExpectedArrival</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(1).LineID</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(1).getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(1).VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(1).DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(1).ExpectedArrival</td>
         </tr>
         <tr>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(2).LineID</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(2).getTimeInMins() mins</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(2).VehicleID</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(2).DestinationName</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(2).ExpectedArrival</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(2).LineID</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(2).getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(2).VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(2).DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(2).ExpectedArrival</td>
         </tr>
         <tr>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(3).LineID</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(3).getTimeInMins() mins</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(3).VehicleID</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(3).DestinationName</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(3).ExpectedArrival</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(3).LineID</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(3).getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(3).VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(3).DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(3).ExpectedArrival</td>
         </tr>
         <tr>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(4).LineID</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(4).getTimeInMins() mins</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(4).VehicleID</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(4).DestinationName</td>
-          <td>@Model.listArrivingBusesAtStop2.ElementAt(4).ExpectedArrival</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(4).LineID</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(4).getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(4).VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(4).DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop1.ElementAt(4).ExpectedArrival</td>
         </tr>
-      </table>
-  
-  
+    </table>
+    <p></p>
+    <p> The next 5 buses arriving at @Model.listArrivingBusesAtStop2.First().StationName are: </p>
+    <table style="width:100%">
+        <tr>
+            <th>Line</th>
+            <th>Arriving in</th>
+            <th>BusID</th>
+            <th>Destination</th>
+            <th>Expected at</th>
+        </tr>
+        <tr>
+            <td>@Model.listArrivingBusesAtStop2.First().LineID</td>
+            <td>@Model.listArrivingBusesAtStop2.First().getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop2.First().VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop2.First().DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop2.First().ExpectedArrival</td>
+        </tr>
+        <tr>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(1).LineID</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(1).getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(1).VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(1).DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(1).ExpectedArrival</td>
+        </tr>
+        <tr>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(2).LineID</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(2).getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(2).VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(2).DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(2).ExpectedArrival</td>
+        </tr>
+        <tr>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(3).LineID</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(3).getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(3).VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(3).DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(3).ExpectedArrival</td>
+        </tr>
+        <tr>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(4).LineID</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(4).getTimeInMins() mins</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(4).VehicleID</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(4).DestinationName</td>
+            <td>@Model.listArrivingBusesAtStop2.ElementAt(4).ExpectedArrival</td>
+        </tr>
+    </table>
+
+
 </div>

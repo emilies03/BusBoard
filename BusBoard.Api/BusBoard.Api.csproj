@@ -52,6 +52,7 @@
     <Compile Include="BusData.cs" />
     <Compile Include="BusStop.cs" />
     <Compile Include="BusStopResponse.cs" />
+    <Compile Include="Exceptions\InvalidPostcodeException.cs" />
     <Compile Include="PostcodeAPI.cs" />
     <Compile Include="PostcodeObject.cs" />
     <Compile Include="PostcodeResponse.cs" />
