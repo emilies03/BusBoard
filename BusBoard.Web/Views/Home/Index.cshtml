@@ -19,5 +19,11 @@
                 <input type="submit" value="Get Bus Info"/>
             </fieldset>
         }
+        @if (ViewBag.Message != null)
+        {
+            <p  style="color:red">
+                 @ViewBag.Message
+            </p>
+        }
     </div>
 </div>

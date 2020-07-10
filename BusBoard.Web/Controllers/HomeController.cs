@@ -8,12 +8,6 @@ namespace BusBoard.Web.Controllers
 {
     public class HomeController : Controller
     {
-        protected override void OnException(ExceptionContext filterContext)
-        {
-            base.OnException(filterContext);
-        }
-
-
         public ActionResult Index()
         {
             return View();
@@ -32,7 +26,8 @@ namespace BusBoard.Web.Controllers
             }
             catch (InvalidPostcodeException invalidPostcodeException)
             {
-                return View("Error");
+                ViewBag.Message = "Invalid postcode entered";
+                return View("Index");
             }
 
         }
