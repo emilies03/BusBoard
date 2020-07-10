@@ -29,6 +29,11 @@ namespace BusBoard.Web.Controllers
                 ViewBag.Message = "Invalid postcode entered";
                 return View("Index");
             }
+            catch (InvalidBusstopException invalidBusStopException)
+            {
+                ViewBag.Message = "This postcode has no registered bus stops close to it";
+                return View("Index");
+            }
 
         }
 
