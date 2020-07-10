@@ -3,6 +3,35 @@
     ViewBag.Title = "Home Page";
 }
 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+</head>
+<body>
+
+
 <div class="jumbotron">
     <h1>BusBoard</h1>
     <p class="lead">For all your bus info needs. Enter a postcode below and click enter to see bus times for that location.</p>
@@ -21,9 +50,10 @@
         }
         @if (ViewBag.Message != null)
         {
-            <p  style="color:red">
-                 @ViewBag.Message
-            </p>
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                @ViewBag.Message
+            </div>
         }
     </div>
 </div>
