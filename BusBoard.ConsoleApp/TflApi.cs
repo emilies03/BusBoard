@@ -20,7 +20,7 @@ namespace BusBoard.ConsoleApp
         }
 
 
-        public IEnumerable<BusStop> GetBusStopsFromCoordinates(string longitude, string latitude)
+        public IEnumerable<BusStop> GetBusStopsFromCoordinates(double longitude, double latitude)
         {
             
             
