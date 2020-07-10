@@ -6,9 +6,9 @@ using RestSharp;
 
 namespace BusBoard.ConsoleApp
 {
-    public class TflAPI
+    public class TflApi
     {
-        public IEnumerable<BusData> GetArrivingBusesListFromServer(string busStop)
+        public IEnumerable<BusData> GetArrivingBusesList(string busStop)
         {
             var client = new RestClient("https://api.tfl.gov.uk");
             var request = new RestRequest($"StopPoint/{busStop}/Arrivals");
