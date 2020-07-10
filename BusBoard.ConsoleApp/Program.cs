@@ -67,9 +67,6 @@ namespace BusBoard.ConsoleApp
         Console.WriteLine($"Bus {bus.VehicleID} on line {bus.LineID} to {bus.DestinationName} will be arriving in {bus.TimeToStation/60} minutes. Expected: {bus.ExpectedArrival}");
       }
     }
-
-
     
-
   }
 }

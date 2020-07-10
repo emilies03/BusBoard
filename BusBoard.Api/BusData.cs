@@ -11,5 +11,13 @@ namespace BusBoard.ConsoleApp.Properties
         public string DestinationName { get; set; }
         public int TimeToStation { get; set; }
         public DateTime ExpectedArrival { get; set; }
+        
+            
+        public int getTimeInMins()
+        {
+            return TimeToStation / 60;
+        }
+        
     }
+
 }
