@@ -30,19 +30,19 @@ namespace BusBoard.ConsoleApp
         userInput = Console.ReadLine();
         if (userInput != "Exit")
         {
-          TflAPI TFLServerAPI = new TflAPI();
+          TflApi serverApi = new TflApi();
           PostcodeAPI postcodeApi = new PostcodeAPI();
-          PostcodeObject postcode = postcodeApi.GetPostcodeLongitueAndLatitude(userInput);
+          PostcodeObject postcode = postcodeApi.GetPostcodeLongitudeAndLatitude(userInput);
           
           if (postcode != null)
           {
-            var TwoClosestBusStops = TFLServerAPI.GetBusStopsFromCoordinates(postcode.Longitude, postcode.Latitude);
+            var TwoClosestBusStops = serverApi.GetBusStopsFromCoordinates(postcode.Longitude, postcode.Latitude);
             try
             {
               IEnumerable<BusData> listArrivingBusesAtStop1 =
-                TFLServerAPI.GetArrivingBusesListFromServer(TwoClosestBusStops.First().NaptanId);
+                serverApi.GetArrivingBusesList(TwoClosestBusStops.First().NaptanId);
               IEnumerable<BusData> listArrivingBusesAtStop2 =
-                TFLServerAPI.GetArrivingBusesListFromServer(TwoClosestBusStops.ElementAt(1).NaptanId);
+                serverApi.GetArrivingBusesList(TwoClosestBusStops.ElementAt(1).NaptanId);
               PrintBusesToConsole(listArrivingBusesAtStop1);
               PrintBusesToConsole(listArrivingBusesAtStop2);
             }

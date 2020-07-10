@@ -60,7 +60,7 @@
     <Compile Include="PostcodeResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TflAPI.cs" />
+    <Compile Include="TflApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
