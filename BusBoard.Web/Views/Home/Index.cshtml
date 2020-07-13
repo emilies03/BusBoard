@@ -44,14 +44,14 @@
             <fieldset>
                 <legend>Post Code:</legend>
                 @Html.TextBoxFor(m => m.Postcode)
-
-                <input type="submit" value="Get Bus Info"/>
+                <input type="submit"  value="Get Bus Info"/>
             </fieldset>
         }
         @if (ViewBag.Message != null)
         {
             <div class="alert">
                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <span>&#9888;</span>
                 @ViewBag.Message
             </div>
         }

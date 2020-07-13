@@ -207,6 +207,10 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+    <PropertyGroup>
+		<VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+		<VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+	</PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusBoard.Api\BusBoard.Api.csproj">
       <Project>{904861a6-1fe9-42c1-b7b3-9fa42bab5df1}</Project>
